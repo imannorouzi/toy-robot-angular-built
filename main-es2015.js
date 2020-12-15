@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>Click any position to start.</p>\n<table class=\"board smooth\">\n  <tbody>\n  <tr *ngFor=\"let r of [].constructor(rows); let row=index;\">\n    <td tabindex=0 (keydown.space)=\"place(col,  rows - row - 1)\" (click)=\"place(col,  rows - row - 1)\" class=\"smooth\" *ngFor=\"let c of [].constructor(cols); let col=index;\">\n      <div *ngIf=\"robot &&\n      robot.isRobotPlaced() &&\n      (robot.x-1 === col) &&\n      (robot.y-1 === rows - row - 1)\"\n           [class]=\"'robot face-' + this.robot.f\" >\n      </div>\n    </td>\n  </tr>\n  </tbody>\n</table>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>Click any position to start and use arrow keys to move the Robot.</p>\n<table class=\"board smooth\">\n  <tbody>\n  <tr *ngFor=\"let r of [].constructor(rows); let row=index;\">\n    <td tabindex=0 (keydown.space)=\"place(col,  rows - row - 1)\" (click)=\"place(col,  rows - row - 1)\" class=\"smooth\" *ngFor=\"let c of [].constructor(cols); let col=index;\">\n      <div *ngIf=\"robot &&\n      robot.isRobotPlaced() &&\n      (robot.x-1 === col) &&\n      (robot.y-1 === rows - row - 1)\"\n           [class]=\"'robot face-' + this.robot.f\" >\n      </div>\n    </td>\n  </tr>\n  </tbody>\n</table>\n");
 
 /***/ }),
 
