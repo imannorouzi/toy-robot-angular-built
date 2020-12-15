@@ -51,7 +51,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"flexbox-parent app-root\">\n\n  <header class=\"bg-dark\">\n    <app-navbar></app-navbar>\n  </header>\n\n  <div class=\"flexbox-item-grow content\">\n    <main class=\"container h-100\">\n\n      <div class=\"row h-100 overflow-auto\">\n        <div class=\"col-md-4 command-history-wrapper\">\n          <app-command-history (redoCommand)=\"executeCommand($event)\" #commandHistory></app-command-history>\n        </div>\n\n        <div class=\"col-md-8\">\n\n          <h1>{{title}}</h1>\n\n          <section class=\"board-wrapper\">\n            <h2>Board</h2>\n            <hr>\n            <app-robot-board (placeChanged)=\"executeCommand($event)\" [robot]=\"robot\" [rows]=\"rows\" [cols]=\"cols\"></app-robot-board>\n          </section>\n\n          <section >\n            <h2>Move the Robot around</h2>\n            <hr>\n\n            <div clss=\"buttons\">\n              <button class=\"secondary\" (click)=\"this.commandHistory.addCommand(robot.move())\">MOVE</button>\n              <button class=\"secondary ml-2\" (click)=\"this.commandHistory.addCommand(robot.left())\">LEFT</button>\n              <button class=\"secondary ml-2\" (click)=\"this.commandHistory.addCommand(robot.right())\">RIGHT</button>\n              <button class=\"pull-right\" (click)=\"this.commandHistory.addCommand(robot.report())\">REPORT</button>\n            </div>\n            <input (keyup.enter)=\"inputEnterPressed()\"\n                   [(ngModel)]=\"command\"\n                   class=\"mt-3\"\n                   placeholder=\"Command (Press enter to submit)...\"\n                   type=\"text\"/>\n          </section>\n        </div>\n\n      </div>\n\n    </main>\n  </div>\n\n\n  <div class=\"app-footer-wrapper\">\n    <app-footer></app-footer>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"flexbox-parent app-root\">\n\n  <header class=\"bg-dark\">\n    <app-navbar></app-navbar>\n  </header>\n\n  <div class=\"flexbox-item-grow content\">\n    <main class=\"container h-100\">\n\n      <div class=\"row h-100 overflow-auto\">\n        <div class=\"col-md-4 command-history-wrapper\">\n          <app-command-history (redoCommand)=\"executeCommand($event)\" #commandHistory></app-command-history>\n        </div>\n\n        <div class=\"col-md-8 content-wrapper\">\n\n          <h1>{{title}}</h1>\n\n          <section class=\"board-wrapper\">\n            <h2>Robot Board</h2>\n            <hr>\n            <app-robot-board (placeChanged)=\"executeCommand($event)\" [robot]=\"robot\" [rows]=\"rows\" [cols]=\"cols\"></app-robot-board>\n          </section>\n\n          <section >\n            <h2>Move the Robot around</h2>\n            <hr>\n\n            <div clss=\"buttons\">\n              <button class=\"secondary\" (click)=\"this.commandHistory.addCommand(robot.move())\">MOVE</button>\n              <button class=\"secondary ml-2\" (click)=\"this.commandHistory.addCommand(robot.left())\">LEFT</button>\n              <button class=\"secondary ml-2\" (click)=\"this.commandHistory.addCommand(robot.right())\">RIGHT</button>\n              <button class=\"pull-right\" (click)=\"this.commandHistory.addCommand(robot.report())\">REPORT</button>\n            </div>\n            <input (keyup.enter)=\"inputEnterPressed()\"\n                   [(ngModel)]=\"command\"\n                   class=\"mt-3\"\n                   placeholder=\"Command (Press enter to submit)...\"\n                   type=\"text\"/>\n          </section>\n        </div>\n\n      </div>\n\n    </main>\n  </div>\n\n\n  <div class=\"app-footer-wrapper\">\n    <app-footer></app-footer>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"command-history flexbox-parent\">\n  <h4>History of commands</h4>\n  <span *ngIf=\"history.length === 0\"> No commands yet!</span>\n  <ul #commandList class=\"commands flexbox-item-grow\">\n    <li class=\"command-wrapper p-1 smooth\" (click)=\"this.repeatCommand(command.command)\" *ngFor=\"let command of history\">\n      <div class=\"command\" [class.fail]=\"!command.actionPerformed\">{{command.command}}</div>\n      <div class=\"message\" *ngIf=\"command.message\">{{command.message}}</div>\n    </li>\n  </ul> <!-- A placeholder for the commands history -->\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"command-history flexbox-parent\">\n  <h4>History of commands</h4>\n  <span *ngIf=\"history.length === 0\"> No commands yet!</span>\n  <ul #commandList class=\"commands flexbox-item-grow\" tabindex=0 >\n    <li class=\"command-wrapper p-1 smooth\"  tabindex=0 (click)=\"this.repeatCommand(command.command)\" *ngFor=\"let command of history\">\n      <div class=\"command\" [class.fail]=\"!command.actionPerformed\">{{command.command}}</div>\n      <div class=\"message\" *ngIf=\"command.message\">{{command.message}}</div>\n    </li>\n  </ul> <!-- A placeholder for the commands history -->\n</div>\n";
     /***/
   },
 
@@ -91,7 +91,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<footer class=\"footer p-4\">\n  <div class=\"container\">\n      <ul class=\"footer-links\" >\n        <li><a href=\"./assets/files/Toy-Robot-Code-Challenge-2020.pdf\" target=\"_blank\" data-pagename=\"footer-test-description\" data-name=\"footer-test-description\" name=\"footer-test-description\" ><i class=\"fa fa-info-circle\"></i> What's This?</a></li>\n        <li><a href=\"https://www.linkedin.com/in/imannorouzi/\" target=\"_blank\" data-pagename=\"footer-link-to-linkedIn\" data-name=\"footer-linedIn\" name=\"footer-linedIn\"><i class=\"fa fa-linkedin-square\"></i> My LinkedIn page</a></li>\n        <li><a href=\"https://github.com/imannorouzi\" target=\"_blank\" data-pagename=\"footer-link-to-github-page\" data-name=\"footer-link-to-my-github\" name=\"footer-github\" ><i class=\"fa fa-github-square\"></i> My Github</a></li>\n        <li><a href=\"./assets/files/Resume.pdf\" target=\"_blank\" data-pagename=\"footer-link-to-resume\" data-name=\"footer-link-to-resume\" name=\"footer-resume\"><i class=\"fa fa-user-circle\"></i> My Resume</a></li>\n      </ul>\n\n      <div class=\"\">\n        <p class=\"text-right\">This is all open source <i class=\"fa fa-copyright fa-rotate-180\"></i>, so, feel free to copy.</p>\n      </div>\n  </div>\n</footer>\n";
+    __webpack_exports__["default"] = "<footer class=\"footer p-2\">\n  <div class=\"container\">\n      <div class=\"row\">\n          <ul class=\"footer-links col-md-6\" >\n              <li><a href=\"./assets/files/Toy-Robot-Code-Challenge-2020.pdf\" target=\"_blank\" data-pagename=\"footer-test-description\" data-name=\"footer-test-description\" name=\"footer-test-description\" ><i class=\"fa fa-info-circle\"></i> Help</a></li>\n              <li><a href=\"https://www.linkedin.com/in/imannorouzi/\" target=\"_blank\" data-pagename=\"footer-link-to-linkedIn\" data-name=\"footer-linedIn\" title=\"linkedIn\" name=\"footer-linedIn\"><i class=\"fa fa-linkedin-square\"></i> LinedIn</a></li>\n              <li><a href=\"https://github.com/imannorouzi\" target=\"_blank\" data-pagename=\"footer-link-to-github-page\" data-name=\"footer-link-to-my-github\" title=\"github\" name=\"footer-github\" ><i class=\"fa fa-github-square\"></i> Github</a></li>\n              <li><a href=\"./assets/files/Resume.pdf\" target=\"_blank\" data-pagename=\"footer-link-to-resume\" data-name=\"footer-link-to-resume\" title=\"Iman Norouzi's reume\" name=\"footer-resume\"><i class=\"fa fa-user-circle\"></i> Resume</a></li>\n          </ul>\n\n          <div class=\"col-md-6 text-right\">\n              <small class=\"\"> Feel free to copy. <i class=\"fa fa-copyright fa-rotate-180\"></i></small>\n          </div>\n      </div>\n\n  </div>\n</footer>\n";
     /***/
   },
 
@@ -131,7 +131,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<p>Click any position to place the Robot.</p>\n<table class=\"board smooth\">\n  <tbody>\n  <tr *ngFor=\"let r of [].constructor(rows); let row=index;\">\n    <td (click)=\"place(col,  rows - row - 1)\" class=\"smooth\" *ngFor=\"let c of [].constructor(cols); let col=index;\">\n      <div *ngIf=\"robot &&\n      robot.isRobotPlaced() &&\n      (robot.x-1 === col) &&\n      (robot.y-1 === rows - row - 1)\"\n           [class]=\"'robot face-' + this.robot.f\" >\n      </div>\n    </td>\n  </tr>\n  </tbody>\n</table>\n";
+    __webpack_exports__["default"] = "<p>Click any position to start.</p>\n<table class=\"board smooth\">\n  <tbody>\n  <tr *ngFor=\"let r of [].constructor(rows); let row=index;\">\n    <td tabindex=0 (keydown.space)=\"place(col,  rows - row - 1)\" (click)=\"place(col,  rows - row - 1)\" class=\"smooth\" *ngFor=\"let c of [].constructor(cols); let col=index;\">\n      <div *ngIf=\"robot &&\n      robot.isRobotPlaced() &&\n      (robot.x-1 === col) &&\n      (robot.y-1 === rows - row - 1)\"\n           [class]=\"'robot face-' + this.robot.f\" >\n      </div>\n    </td>\n  </tr>\n  </tbody>\n</table>\n";
     /***/
   },
 
@@ -806,7 +806,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "header{\n  padding: 0;\n  border-bottom: 1px solid #0070ba;\n}\n\nmain{\n}\n\n.command-history-wrapper{\n  max-height: 100%;\n}\n\nsection{\n  background-color: white;\n  border-radius: 10px;\n  margin-top: 20px;\n  padding: 20px;\n  box-shadow: 0 2px 1px 0 rgba(0,0,0,.1);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxVQUFVO0VBQ1YsZ0NBQWdDO0FBQ2xDOztBQUVBO0FBQ0E7O0FBQ0E7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBR0E7RUFDRSx1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixhQUFhO0VBRWIsc0NBQXNDO0FBQ3hDIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJoZWFkZXJ7XG4gIHBhZGRpbmc6IDA7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMDA3MGJhO1xufVxuXG5tYWlue1xufVxuLmNvbW1hbmQtaGlzdG9yeS13cmFwcGVye1xuICBtYXgtaGVpZ2h0OiAxMDAlO1xufVxuXG5cbnNlY3Rpb257XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBwYWRkaW5nOiAyMHB4O1xuICAtd2Via2l0LWJveC1zaGFkb3c6IDAgMnB4IDFweCAwIHJnYmEoMCwwLDAsLjEpO1xuICBib3gtc2hhZG93OiAwIDJweCAxcHggMCByZ2JhKDAsMCwwLC4xKTtcbn1cbiJdfQ== */";
+    __webpack_exports__["default"] = "header{\n  padding: 0;\n  border-bottom: 1px solid #0070ba;\n}\n\nmain{\n}\n\n.content-wrapper,\n.command-history-wrapper{\n  max-height: 100%;\n  overflow: auto;\n}\n\nsection{\n  background-color: white;\n  border-radius: 10px;\n  margin-top: 20px;\n  padding: 20px;\n  box-shadow: 0 2px 1px 0 rgba(0,0,0,.1);\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxVQUFVO0VBQ1YsZ0NBQWdDO0FBQ2xDOztBQUVBO0FBQ0E7O0FBQ0E7O0VBRUUsZ0JBQWdCO0VBQ2hCLGNBQWM7QUFDaEI7O0FBR0E7RUFDRSx1QkFBdUI7RUFDdkIsbUJBQW1CO0VBQ25CLGdCQUFnQjtFQUNoQixhQUFhO0VBRWIsc0NBQXNDO0FBQ3hDIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJoZWFkZXJ7XG4gIHBhZGRpbmc6IDA7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMDA3MGJhO1xufVxuXG5tYWlue1xufVxuLmNvbnRlbnQtd3JhcHBlcixcbi5jb21tYW5kLWhpc3Rvcnktd3JhcHBlcntcbiAgbWF4LWhlaWdodDogMTAwJTtcbiAgb3ZlcmZsb3c6IGF1dG87XG59XG5cblxuc2VjdGlvbntcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIC13ZWJraXQtYm94LXNoYWRvdzogMCAycHggMXB4IDAgcmdiYSgwLDAsMCwuMSk7XG4gIGJveC1zaGFkb3c6IDAgMnB4IDFweCAwIHJnYmEoMCwwLDAsLjEpO1xufVxuIl19 */";
     /***/
   },
 
@@ -960,6 +960,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.commandHistory.addCommand(result);
         }
+      }, {
+        key: "onKeydownHandler",
+        value: function onKeydownHandler(event) {
+          switch (event.key) {
+            case 'ArrowUp':
+              this.commandHistory.addCommand(this.robot.move());
+              break;
+
+            case 'ArrowLeft':
+              this.commandHistory.addCommand(this.robot.left());
+              break;
+
+            case 'ArrowRight':
+              this.commandHistory.addCommand(this.robot.right());
+              break;
+          }
+        }
       }]);
 
       return AppComponent;
@@ -968,6 +985,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('commandHistory', {
       "static": false
     })], AppComponent.prototype, "commandHistory", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('document:keydown', ['$event'])], AppComponent.prototype, "onKeydownHandler", null);
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-root',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -1195,7 +1213,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".footer{\n  border-top: 1px solid #cbd2d6;\n  background: #fff;\n  color: #6c7378;\n  text-shadow: 0 1px 1px #fff;\n}\n\n.footer-links li:not(:last-child):after{\n  content: '|';\n  color: #a7a7a7;\n  margin-left: 10px;\n}\n\n.footer-links li{\n  margin-right: 10px;\n}\n\n.footer-links{\n  padding: 0 0 10px 0;\n  list-style: none;\n  display: flex;\n  border-bottom: 1px dotted #a7a7a7;\n}\n\n.footer-links a{\n  color: #0030c6;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsNkJBQTZCO0VBQzdCLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QsMkJBQTJCO0FBQzdCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7O0FBQ0E7RUFDRSxrQkFBa0I7QUFDcEI7O0FBQ0E7RUFDRSxtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGFBQWE7RUFDYixpQ0FBaUM7QUFDbkM7O0FBQ0E7RUFDRSxjQUFjO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlcntcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNjYmQyZDY7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIGNvbG9yOiAjNmM3Mzc4O1xuICB0ZXh0LXNoYWRvdzogMCAxcHggMXB4ICNmZmY7XG59XG5cbi5mb290ZXItbGlua3MgbGk6bm90KDpsYXN0LWNoaWxkKTphZnRlcntcbiAgY29udGVudDogJ3wnO1xuICBjb2xvcjogI2E3YTdhNztcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG59XG4uZm9vdGVyLWxpbmtzIGxpe1xuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG59XG4uZm9vdGVyLWxpbmtze1xuICBwYWRkaW5nOiAwIDAgMTBweCAwO1xuICBsaXN0LXN0eWxlOiBub25lO1xuICBkaXNwbGF5OiBmbGV4O1xuICBib3JkZXItYm90dG9tOiAxcHggZG90dGVkICNhN2E3YTc7XG59XG4uZm9vdGVyLWxpbmtzIGF7XG4gIGNvbG9yOiAjMDAzMGM2O1xufVxuIl19 */";
+    __webpack_exports__["default"] = ".footer{\n  border-top: 1px solid #cbd2d6;\n  background: #fff;\n  color: #6c7378;\n  text-shadow: 0 1px 1px #fff;\n}\n\n.footer-links li:not(:last-child):after{\n  content: '|';\n  color: #a7a7a7;\n  margin-left: 10px;\n}\n\n.footer-links li{\n  margin-right: 10px;\n}\n\n.footer-links{\n  padding: 0 0 10px 0;\n  list-style: none;\n  display: flex;\n  margin: 0;\n}\n\n.footer-links a{\n  color: #0030c6;\n  white-space: nowrap;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsNkJBQTZCO0VBQzdCLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QsMkJBQTJCO0FBQzdCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGNBQWM7RUFDZCxpQkFBaUI7QUFDbkI7O0FBQ0E7RUFDRSxrQkFBa0I7QUFDcEI7O0FBQ0E7RUFDRSxtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLGFBQWE7RUFDYixTQUFTO0FBQ1g7O0FBQ0E7RUFDRSxjQUFjO0VBQ2QsbUJBQW1CO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlcntcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNjYmQyZDY7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIGNvbG9yOiAjNmM3Mzc4O1xuICB0ZXh0LXNoYWRvdzogMCAxcHggMXB4ICNmZmY7XG59XG5cbi5mb290ZXItbGlua3MgbGk6bm90KDpsYXN0LWNoaWxkKTphZnRlcntcbiAgY29udGVudDogJ3wnO1xuICBjb2xvcjogI2E3YTdhNztcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG59XG4uZm9vdGVyLWxpbmtzIGxpe1xuICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG59XG4uZm9vdGVyLWxpbmtze1xuICBwYWRkaW5nOiAwIDAgMTBweCAwO1xuICBsaXN0LXN0eWxlOiBub25lO1xuICBkaXNwbGF5OiBmbGV4O1xuICBtYXJnaW46IDA7XG59XG4uZm9vdGVyLWxpbmtzIGF7XG4gIGNvbG9yOiAjMDAzMGM2O1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xufVxuIl19 */";
     /***/
   },
 
